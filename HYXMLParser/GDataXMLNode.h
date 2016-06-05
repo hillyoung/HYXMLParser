@@ -77,6 +77,8 @@ _EXTERN const char* kGDataXMLXPathDefaultNamespacePrefix _INITIALIZE_AS("_def_ns
 // So, for example:
 //  + (id)nodeConsumingXMLNode:(xmlNodePtr)theXMLNode;
 
+const char *IANAEncodingCStringFromNSStringEncoding(NSStringEncoding encoding);
+
 @class NSArray, NSDictionary, NSError, NSString, NSURL;
 @class GDataXMLElement, GDataXMLDocument;
 

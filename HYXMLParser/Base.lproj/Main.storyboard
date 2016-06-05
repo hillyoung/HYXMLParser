@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,8 +16,38 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pf5-Xz-xWI">
+                                <rect key="frame" x="0.0" y="20" width="600" height="380"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HzC-Zf-COc">
+                                <rect key="frame" x="0.0" y="450" width="600" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Amx-lk-frD"/>
+                                </constraints>
+                                <state key="normal" title="解析"/>
+                                <connections>
+                                    <action selector="touchParserButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="igT-iX-Vtj"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Pf5-Xz-xWI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="E1Y-VA-3L8"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="HzC-Zf-COc" secondAttribute="bottom" constant="120" id="JcL-r8-pH6"/>
+                            <constraint firstItem="Pf5-Xz-xWI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="S0p-nA-B6k"/>
+                            <constraint firstAttribute="trailing" secondItem="Pf5-Xz-xWI" secondAttribute="trailing" id="iFg-04-63y"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Pf5-Xz-xWI" secondAttribute="bottom" constant="200" id="m7d-ws-3sO"/>
+                            <constraint firstItem="HzC-Zf-COc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="qZh-sh-HsU"/>
+                            <constraint firstAttribute="trailing" secondItem="HzC-Zf-COc" secondAttribute="trailing" id="tT7-by-qyn"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="Pf5-Xz-xWI" id="zaK-Y8-Zpz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

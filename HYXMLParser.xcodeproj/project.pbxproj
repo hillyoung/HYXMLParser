@@ -14,7 +14,6 @@
 		E828D3651D0007EC008151BB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E828D3641D0007EC008151BB /* Assets.xcassets */; };
 		E828D3681D0007EC008151BB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E828D3661D0007EC008151BB /* LaunchScreen.storyboard */; };
 		E828D3701D00080B008151BB /* NoStandardData in Resources */ = {isa = PBXBuildFile; fileRef = E828D36F1D00080B008151BB /* NoStandardData */; };
-		E828D3761D00082C008151BB /* HYCoreXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E828D3731D00082C008151BB /* HYCoreXMLParser.m */; };
 		E828D3771D00082C008151BB /* HYXMLParser.m in Sources */ = {isa = PBXBuildFile; fileRef = E828D3751D00082C008151BB /* HYXMLParser.m */; };
 		E828D37A1D000838008151BB /* XMLReader.m in Sources */ = {isa = PBXBuildFile; fileRef = E828D3791D000838008151BB /* XMLReader.m */; };
 		E828D37D1D000840008151BB /* GDataXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = E828D37C1D000840008151BB /* GDataXMLNode.m */; };
@@ -34,8 +33,6 @@
 		E828D3671D0007EC008151BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E828D3691D0007EC008151BB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E828D36F1D00080B008151BB /* NoStandardData */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = NoStandardData; sourceTree = "<group>"; };
-		E828D3721D00082C008151BB /* HYCoreXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYCoreXMLParser.h; sourceTree = "<group>"; };
-		E828D3731D00082C008151BB /* HYCoreXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYCoreXMLParser.m; sourceTree = "<group>"; };
 		E828D3741D00082C008151BB /* HYXMLParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HYXMLParser.h; sourceTree = "<group>"; };
 		E828D3751D00082C008151BB /* HYXMLParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HYXMLParser.m; sourceTree = "<group>"; };
 		E828D3781D000838008151BB /* XMLReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XMLReader.h; sourceTree = "<group>"; };
@@ -109,10 +106,8 @@
 		E828D3711D00082C008151BB /* HYXMLParser */ = {
 			isa = PBXGroup;
 			children = (
-				E828D3721D00082C008151BB /* HYCoreXMLParser.h */,
 				E828D3801D001645008151BB /* GDataXMLDocument+HYSerialize.h */,
 				E828D3811D001645008151BB /* GDataXMLDocument+HYSerialize.m */,
-				E828D3731D00082C008151BB /* HYCoreXMLParser.m */,
 				E828D3741D00082C008151BB /* HYXMLParser.h */,
 				E828D3751D00082C008151BB /* HYXMLParser.m */,
 			);
@@ -190,7 +185,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E828D3761D00082C008151BB /* HYCoreXMLParser.m in Sources */,
 				E828D37D1D000840008151BB /* GDataXMLNode.m in Sources */,
 				E828D3601D0007EC008151BB /* ViewController.m in Sources */,
 				E828D35D1D0007EC008151BB /* AppDelegate.m in Sources */,
@@ -354,6 +348,7 @@
 				E828D36E1D0007EC008151BB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

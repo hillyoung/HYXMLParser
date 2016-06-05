@@ -1,41 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<items>
-<item>
-<time>2016-06-02 08:41:43</time>
-<starttime>2016-06-02 08:41:43</starttime>
-<name>鲍帅</name>
-<opernam>null</opernam>
-<memo>iOS060201测试</memo>
-<node>结束</node>
-</item>
-<item>
-<time>2016-06-02 08:41:43</time>
-<starttime>2016-06-02 08:41:27</starttime>
-<name>鲍帅</name>
-<opernam>验收通过</opernam>
-<memo>iOS060201测试</memo>
-<node>隐患验证</node>
-</item>
-<item>
-<time>2016-06-02 08:41:26</time>
-<starttime>2016-06-02 08:41:15</starttime>
-<name>鲍帅</name>
-<opernam>确认完成</opernam>
-<memo>iOS060201测试</memo>
-<node>领导确认</node>
-</item>
-<item>
-<time>2016-06-02 08:41:15</time>
-<starttime>2016-06-02 08:40:41</starttime>
-<name>鲍帅</name>
-<opernam>整改完成</opernam>
-<memo>iOS060201测试</memo>
-<node>隐患整改</node>
-<sort>3</sort>
-</item>
-</items>
-<current>
-<currentusrnam></currentusrnam>
-<stacd>结束</stacd>
-<actobj_nam></actobj_nam>
-</current>
+<note>
+    <to>George</to>
+    <from>John</from>
+    <heading>Reminder</heading>
+    <body>Don't forget the meeting!</body>
+</note>

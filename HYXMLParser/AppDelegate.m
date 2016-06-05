@@ -18,17 +18,6 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
-    
-    NSString *content = @"actObjNo=1765&comm=%E4%BC%91%E6%81%AF&execstatus=2&instNo=595&mdlTyp=1003&mdlTypNo=1003&messageFormat=json&objNo=15&oprIdx=1&oprTyp=00&pgmId=B2GIM91002&pkValue=883&rapid=0&tableName=YWKFWORKFORMMST&userId=LIJUAN";
-    
-    NSString *utf8Content = [content stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    
-    NSString *chinaContent = [content stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    NSString *doubleChineContent = [chinaContent stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-    
-    
     return YES;
 }
 
