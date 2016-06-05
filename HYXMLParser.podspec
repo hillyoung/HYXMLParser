@@ -24,8 +24,9 @@ Pod::Spec.new do |s|
   #   * Try to keep it short, snappy and to the point.
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
-  s.description  = <<-DESC
-                  DESC
+  # s.description  = <<-DESC    
+  #              DESC
+
 
 
   s.homepage     = "https://github.com/hillyoung/HYXMLParser"
@@ -39,7 +40,7 @@ Pod::Spec.new do |s|
   #  Popular ones are 'MIT', 'BSD' and 'Apache License, Version 2.0'.
   #
 
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+   s.license      = { :type => "MIT", :file => "LICENSE" }
   # s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
 
 
@@ -53,7 +54,7 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "yanghaha" => "389181073@qq.com" }
+  s.author             = { 'hillyoung' => '1666487339@qq.com' }
   # Or just: s.author    = "yanghaha"
   # s.authors            = { "yanghaha" => "389181073@qq.com" }
   # s.social_media_url   = "http://twitter.com/yanghaha"
@@ -80,7 +81,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "http://EXAMPLE/HYXMLParser.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/hillyoung/HYXMLParser.git", :tag => "0.0.1" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -131,7 +132,7 @@ Pod::Spec.new do |s|
 
   # s.requires_arc = true
 
-  s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency " gdata-objectivec-client", "~> 1.9.1"
+  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+  # s.dependency " gdata-objectivec-client", "~> 1.9.1"
 
 end
