@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "HYXMLParser"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "快速将xml解析成，字典或数组对象"
 
   # This description is used to generate tags and improve search results.
@@ -81,7 +81,7 @@ Pod::Spec.new do |s|
   #  Supports git, hg, bzr, svn and HTTP.
   #
 
-  s.source       = { :git => "https://github.com/hillyoung/HYXMLParser.git", :tag => "0.0.1" }
+  s.source       = { :git => "https://github.com/hillyoung/HYXMLParser.git", :tag => "0.0.2" }
 
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -132,7 +132,6 @@ Pod::Spec.new do |s|
 
   # s.requires_arc = true
 
-  # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  # s.dependency " gdata-objectivec-client", "~> 1.9.1"
-
+  s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+  s.dependency 'GDataXML-HTML', '~> 1.3.0'
 end

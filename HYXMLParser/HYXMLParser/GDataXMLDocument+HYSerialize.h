@@ -8,6 +8,8 @@
 
 #import "GDataXMLNode.h"
 
+const char *IANAEncodingCStringFromNSStringEncoding(NSStringEncoding encoding);
+
 @interface GDataXMLDocument (HYSerialize)
 
 /**

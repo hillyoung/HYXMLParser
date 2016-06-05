@@ -1,1 +1,1 @@
-pod 'XCAsyncTestCase', :git => 'https://github.com/hillyoung/HYXMLParser.git'
+pod 'GDataXML-HTML', '~> 1.3.0'
