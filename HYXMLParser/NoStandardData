@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<data>
 <note>
     <to>George</to>
     <from>John</from>
     <heading>Reminder</heading>
     <body>Don't forget the meeting!</body>
+    <note1>
+        <to>George</to>
+        <from>John</from>
+        <heading>Reminder</heading>
+        <body>Don't forget the meeting!</body>
+    </note1>
 </note>
+</data>

@@ -31,11 +31,11 @@ const char *IANAEncodingCStringFromNSStringEncoding(NSStringEncoding encoding);
 + (BOOL)isValidForData:(NSData *)data encoding:(NSStringEncoding)encoding ;
 
 
-+ (instancetype)parserXMLString:(NSString *)str error:(NSError *__autoreleasing *)error ;
++ (instancetype)parserXMLString:(NSString *)str error:(NSError *__autoreleasing *)error arrayTitles:(NSArray *)arrayTitles;
 
-+ (instancetype)parserXMLString:(NSString *)str encoding:(NSStringEncoding)encoding error:(NSError *__autoreleasing *)error ;
++ (instancetype)parserXMLString:(NSString *)str encoding:(NSStringEncoding)encoding error:(NSError *__autoreleasing *)error  arrayTitles:(NSArray *)arrayTitles ;
 
-+ (id)parserData:(NSData *)data error:(NSError *__autoreleasing *)error ;
++ (id)parserData:(NSData *)data error:(NSError *__autoreleasing *)error arrayTitles:(NSArray *)arrayTitles ;
 
 /**
  *  初始化
@@ -43,6 +43,6 @@ const char *IANAEncodingCStringFromNSStringEncoding(NSStringEncoding encoding);
  *
  *  @return
  */
-+ (instancetype)parserData:(NSData *)data encoding:(NSStringEncoding)encoding error:(NSError *__autoreleasing *)error ;
++ (instancetype)parserData:(NSData *)data encoding:(NSStringEncoding)encoding error:(NSError *__autoreleasing *)error arrayTitles:(NSArray *)arrayTitles ;
 
 @end

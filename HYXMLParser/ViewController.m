@@ -49,7 +49,7 @@
     error = nil;
 
 
-    GDataXMLDocument *document = [GDataXMLDocument parserData:data error:&error];
+    GDataXMLDocument *document = [GDataXMLDocument parserData:data error:&error arrayTitles:@[@"note", @"note1"]];
 
     if (error) {
         NSLog(@"%@", error);

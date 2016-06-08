@@ -9,14 +9,13 @@
 #import "GDataXMLDocument+HYSerialize.h"
 #import <objc/runtime.h>
 
-@interface GDataXMLDocument () {
-    BOOL _isBadFormat;  //传入的xml是否错误格式
-}
+@interface GDataXMLDocument ()
 
 /**
  *  是否自动添加根节点
  */
 @property (nonatomic) BOOL autoAddRootElement;
+@property (strong, nonatomic) NSArray *arrayTitles;
 
 @end
 
@@ -24,22 +23,21 @@
 
 #pragma mark - LifeCycle
 
-+ (instancetype)parserXMLString:(NSString *)str error:(NSError *__autoreleasing *)error {
-    return [GDataXMLDocument parserXMLString:str encoding:NSUTF8StringEncoding error:error];
++ (instancetype)parserXMLString:(NSString *)str error:(NSError *__autoreleasing *)error arrayTitles:(NSArray *)arrayTitles {
+    return [GDataXMLDocument parserXMLString:str encoding:NSUTF8StringEncoding error:error arrayTitles:arrayTitles];
 }
 
-+ (instancetype)parserXMLString:(NSString *)str encoding:(NSStringEncoding)encoding error:(NSError *__autoreleasing *)error {
++ (instancetype)parserXMLString:(NSString *)str encoding:(NSStringEncoding)encoding error:(NSError *__autoreleasing *)error arrayTitles:(NSArray *)arrayTitles {
     NSData *data = [str dataUsingEncoding:encoding];
-    return [GDataXMLDocument parserData:data encoding:encoding error:error];
+    return [GDataXMLDocument parserData:data encoding:encoding error:error arrayTitles:arrayTitles];
 }
 
 
-+ (id)parserData:(NSData *)data error:(NSError *__autoreleasing *)error {
-    return [GDataXMLDocument parserData:data encoding:NSUTF8StringEncoding error:error];
++ (id)parserData:(NSData *)data error:(NSError *__autoreleasing *)error arrayTitles:(NSArray *)arrayTitles {
+    return [GDataXMLDocument parserData:data encoding:NSUTF8StringEncoding error:error arrayTitles:arrayTitles];
 }
 
-+ (instancetype)parserData:(NSData *)data encoding:(NSStringEncoding)encoding error:(NSError *__autoreleasing *)error {
-
++ (instancetype)parserData:(NSData *)data encoding:(NSStringEncoding)encoding error:(NSError *__autoreleasing *)error arrayTitles:(NSArray *)arrayTitles {
     NSData *parserData = data;
 
     if (![GDataXMLDocument isValidForData:data encoding:encoding]) {
@@ -60,6 +58,7 @@
     }
 
     GDataXMLDocument *document = [[GDataXMLDocument alloc] initWithData:parserData error:error];
+    document.arrayTitles = arrayTitles;
     document.autoAddRootElement = ![GDataXMLDocument isValidForData:data encoding:encoding];
 
     return document;
@@ -98,24 +97,7 @@
     return YES;
 }
 
-
-#pragma mark - Setter && Getter
-
-char const *Key_AutoAddRootElment = "autoAddRootElement";
-- (void)setAutoAddRootElement:(BOOL)autoAddRootElement {
-    objc_setAssociatedObject(self, Key_AutoAddRootElment, @(autoAddRootElement), OBJC_ASSOCIATION_COPY_NONATOMIC);
-}
-
-- (BOOL)autoAddRootElement {
-
-    NSNumber *number = objc_getAssociatedObject(self, Key_AutoAddRootElment);
-
-    if (!number) {
-        return NO;
-    }
-
-    return number.boolValue;
-}
+#pragma mark - Private
 
 /**
  *  解析节点
@@ -155,13 +137,47 @@ char const *Key_AutoAddRootElment = "autoAddRootElement";
 
             } else {
                 //递归算法获取对应的值
-                [content setValue:[self parserElement:childrenElement] forKey:childrenElement.name];
+
+                if ([self.arrayTitles containsObject:childrenElement.name]) {
+                    NSMutableArray *array = [@[[self parserElement:childrenElement]] mutableCopy];
+                    [content setValue:array forKey:childrenElement.name];
+                } else {
+                    [content setValue:[self parserElement:childrenElement] forKey:childrenElement.name];
+                }
+
             }
             
         }];
     }
 
     return content;
+}
+
+#pragma mark - Setter && Getter
+
+char const *Key_AutoAddRootElment = "autoAddRootElement";
+- (void)setAutoAddRootElement:(BOOL)autoAddRootElement {
+    objc_setAssociatedObject(self, Key_AutoAddRootElment, @(autoAddRootElement), OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (BOOL)autoAddRootElement {
+
+    NSNumber *number = objc_getAssociatedObject(self, Key_AutoAddRootElment);
+
+    if (!number) {
+        return NO;
+    }
+
+    return number.boolValue;
+}
+
+char const *Key_ArrayTitles = "arrayTitles" ;
+- (void)setArrayTitles:(NSArray *)arrayTitles {
+    objc_setAssociatedObject(self, Key_ArrayTitles, arrayTitles, OBJC_ASSOCIATION_COPY_NONATOMIC);
+}
+
+- (NSArray *)arrayTitles {
+    return objc_getAssociatedObject(self, Key_ArrayTitles);
 }
 
 @end
