@@ -142,7 +142,8 @@
                     NSMutableArray *array = [@[[self parserElement:childrenElement]] mutableCopy];
                     [content setValue:array forKey:childrenElement.name];
                 } else {
-                    [content setValue:[self parserElement:childrenElement] forKey:childrenElement.name];
+                    NSString *text = [self parserElement:childrenElement];
+                    [content setValue:text? text:@"" forKey:childrenElement.name];
                 }
 
             }
